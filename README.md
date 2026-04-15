@@ -50,17 +50,19 @@ AI UI Audit:
 ## Project Structure
 ```text
 src/
-├── core/
-│   └── validator.js
-├── services/
-│   ├── screenshot.js
-│   ├── figmaService.js
-│   ├── compare.js
-│   ├── gemini.js
-├── utils/
-│   └── parseFigmaUrl.js
 ├── cli/
 │   └── interactive.js
+├── core/
+│   └── runner.js
+│   └── validator.js
+├── services/
+│   ├── compare.js
+│   ├── figmaService.js
+│   ├── gemini.js
+│   ├── screenshot.js
+├── utils/
+│   └── formatResult.js
+│   └── parseFigmaUrl.js
 ├── index.js
 ```
 ## Notes
