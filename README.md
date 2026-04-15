@@ -12,13 +12,7 @@ DesignSync AI automates UI validation by comparing frontend implementation with 
 
 ## Installation
 
-Clone the repository:
-
-git clone `<your-repo-url>`{=html} cd DesignSync-AI
-
-Install dependencies:
-
-npm install
+Clone the repository & Install dependencies
 
 ## Environment Setup
 
