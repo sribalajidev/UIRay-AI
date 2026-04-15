@@ -38,20 +38,14 @@ npm run validate ui
 
 ## Output Example
 
-UI Validation Result
-==============================
+### UI Validation Result:
 
 Match Score: 90.82 percent (Excellent) Mismatch: 9.18 percent
 
 Diff Image: temp/diff.png
 
 AI UI Audit:
-
-Overall Summary
-
-Header
-
-Hero Section
+(Overall Summary)
 
 ## Project Structure
 
