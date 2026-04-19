@@ -1,10 +1,15 @@
 {
   "name": "designlens-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DesignLens AI automates UI validation by comparing frontend implementation with design specifications and highlighting inconsistencies using AI driven insights.",
   "author": "www.sribalajidev.com",
   "main": "index.js",
-  "keywords": ["ui", "figma", "validation", "ai"],
+  "keywords": [
+    "ui",
+    "figma",
+    "validation",
+    "ai"
+  ],
   "license": "MIT",
   "type": "module",
   "bin": {
