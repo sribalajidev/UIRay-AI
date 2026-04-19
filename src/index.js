@@ -1,9 +1,21 @@
+#!/usr/bin/env node
 import "dotenv/config";
 import { getUserInput } from "./cli/interactive.js";
 import { runValidation } from "./core/runner.js";
 import formatResult from "./utils/formatResult.js";
 
 async function main() {
+  // Check for required environment variables
+  if (!process.env.FIGMA_TOKEN) {
+    console.log("⚠️ FIGMA_TOKEN is missing.");
+    console.log("Create a .env file and add:");
+    console.log("FIGMA_TOKEN=your_token_here\n");
+  }
+  if (!process.env.GEMINI_API_KEY) {
+    console.log("⚠️ GEMINI_API_KEY is missing.");
+    console.log("AI audit will be skipped.\n");
+  }
+
   const mode = process.argv[2];
 
   if (mode === "ui") {

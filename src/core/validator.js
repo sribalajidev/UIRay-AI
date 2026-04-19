@@ -20,7 +20,7 @@ async function validateUI({ figmaUrl, figmaFilePath, pageUrl, token, device, ena
 
       // 1. Parse Figma URL
       const { fileKey, nodeId } = parseFigmaUrl(figmaUrl);
-      console.log("Parsed Figma URL:", { fileKey, nodeId });
+      // console.log("Parsed Figma URL:", { fileKey, nodeId });
 
       // 2. Get Figma image URL
       const figmaImageUrl = await getFigmaImageUrl({
@@ -53,8 +53,10 @@ async function validateUI({ figmaUrl, figmaFilePath, pageUrl, token, device, ena
       if (!fs.existsSync(cleanPath)) {
         throw new Error(`Invalid file path provided: ${cleanPath}`);
       }
+      const tempFigmaPath = "temp/figma.png";
+      fs.copyFileSync(cleanPath, tempFigmaPath);
 
-      figmaPath = cleanPath;
+      figmaPath = tempFigmaPath;
       console.log("Using file:", figmaPath);
     }
 

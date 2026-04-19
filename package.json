@@ -4,9 +4,16 @@
   "description": "DesignLens AI automates UI validation by comparing frontend implementation with design specifications and highlighting inconsistencies using AI driven insights.",
   "author": "www.sribalajidev.com",
   "main": "index.js",
-  "keywords": [],
-  "license": "ISC",
+  "keywords": ["ui", "figma", "validation", "ai"],
+  "license": "MIT",
   "type": "module",
+  "bin": {
+    "designlens": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
   "scripts": {
     "validate": "node src/index.js"
   },

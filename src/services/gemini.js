@@ -46,11 +46,12 @@ Give a detailed UI audit:
 Output format:
 
 Overall Summary
-
-Header / Navbar
 ...
 
-Section
+Each Section of the page (Navbar, Hero, Content, Footer, etc.)
+- Issues found
+- Details on spacing, alignment, typography, colors
+- Actionable feedback
 ...
 
 Typography

@@ -1,5 +1,5 @@
 # DesignLens-AI
-DesignLens AI automates UI validation by comparing frontend implementation with design specifications and highlighting inconsistencies using AI driven insights.
+DesignLens AI is a CLI tool that automates UI validation by comparing frontend implementation with design specifications and highlighting inconsistencies using AI-driven insights.
 
 ## Features
 
@@ -12,20 +12,33 @@ DesignLens AI automates UI validation by comparing frontend implementation with 
 
 ## Installation
 
-Clone the repository & Install dependencies
+Run using npx:
+
+`npx designlens ui`
+
+Or install globally:
+
+`npm install -g designlens-ai`
+`designlens ui`
 
 ## Environment Setup
 
-Create a .env file in the root:
+Create a `.env` file in the directory where you run the CLI:
 
-FIGMA_TOKEN=your_figma_token 
+FIGMA_TOKEN=your_figma_token
 GEMINI_API_KEY=your_gemini_api_key
+
+Notes:
+
+- FIGMA_TOKEN is required to fetch designs from Figma
+- GEMINI_API_KEY is optional (used for AI UI audit)
+- Make sure you run the CLI from the same folder where `.env` is present
 
 ## Usage
 
 Run interactive CLI:
 
-npm run validate ui
+`npx designlens ui`
 
 ## CLI Flow
 
