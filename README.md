@@ -25,8 +25,10 @@ Or install globally:
 
 Create a `.env` file in the directory where you run the CLI:
 
+```text
 FIGMA_TOKEN=your_figma_token
 GEMINI_API_KEY=your_gemini_api_key
+```
 
 Notes:
 
