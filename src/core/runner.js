@@ -5,6 +5,7 @@ export async function runValidation({
   figmaUrl,
   figmaFilePath,
   device,
+  viewport,
   enableAI,
   token,
 }) {
@@ -13,6 +14,7 @@ export async function runValidation({
     figmaUrl,
     figmaFilePath,
     device,
+    viewport,
     enableAI,
     token,
   });

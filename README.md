@@ -1,5 +1,5 @@
 # UIRay-AI
-UIRay AI is a CLI tool for validating UI by comparing frontend implementation with design specifications and highlighting inconsistencies using AI-driven insights.
+UIRay AI is a CLI tool for validating UI by comparing frontend implementation with design specifications and highlighting inconsistencies using AI-driven insights powered by Google Gemini.
 
 ## Features
 
@@ -46,7 +46,7 @@ Run interactive CLI:
 
 ## CLI Flow
 
-1.  Select device (pc / tab / mob)
+1.  Select device (Desktop (1920) / Tablet (991) / Mobile (375) / Custom Width)
 2.  Enter website URL
 3.  Choose reference:
     -   Figma URL

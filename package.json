@@ -1,7 +1,7 @@
   {
     "name": "uiray-ai",
     "version": "1.1.0",
-    "description": "UIRay AI is a CLI tool for validating UI by comparing frontend implementation with design specifications and highlighting inconsistencies using AI-driven insights.",
+    "description": "UIRay AI is a CLI tool for validating UI by comparing frontend implementation with design specifications and highlighting inconsistencies using AI-driven insights powered by Google Gemini.",
     "author": "Sri Balaji (https://www.sribalajidev.com)",
     "main": "index.js",
     "keywords": [
@@ -20,7 +20,7 @@
       "README.md"
     ],
     "scripts": {
-      "validate": "node src/index.js run"
+      "validate": "node src/index.js"
     },
     "repository": {
       "type": "git",

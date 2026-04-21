@@ -26,45 +26,83 @@ export async function generateUIAudit({
     });
 
     const prompt = `
-You are a senior UI/UX reviewer.
+    You are an expert UI/UX auditor and frontend reviewer.
 
-Compare these:
-1. Figma design (expected UI) ${figmaPath}
-2. Implemented webpage (actual UI) ${pagePath}
-3. Diff image (highlighting differences) ${diffPath}
+    You are given three inputs:
+    1. Reference design (Figma): ${figmaPath}
+    2. Implemented UI (Webpage): ${pagePath}
+    3. Diff image (visual differences): ${diffPath}
 
-Match Score: ${matchScore}%
+    Match Score: ${matchScore}%
 
-Give a detailed UI audit:
+    Your task is to perform a structured UI audit comparing the implementation against the design.
 
-- Section-wise issues (Navbar, Hero, Content, Footer if applicable)
-- Mention spacing, alignment, typography, color differences
-- Be specific and actionable (like a developer review)
-- Keep it structured and clean
-- Avoid generic statements
+    IMPORTANT INSTRUCTIONS:
+    - Do NOT assume fixed sections like Navbar or Hero
+    - Dynamically identify visual sections/components based on layout
+    - Be precise, developer-focused, and actionable
+    - Avoid generic statements
+    - Focus only on visible UI differences
+    - Keep output concise and structured using bullet points
 
-Output format:
+    ---
 
-Overall Summary
-...
+    OUTPUT FORMAT:
 
-Each Section of the page (Navbar, Hero, Content, Footer, etc.)
-- Issues found
-- Details on spacing, alignment, typography, colors
-- Actionable feedback
-...
+    ### Overall Summary
+    - 2–4 bullet points summarizing key differences
+    - Mention overall quality (e.g., "Close match", "Noticeable inconsistencies")
 
-Typography
-...
+    ---
 
-Colors
-...
+    ### Detected Sections / Components
 
-Spacing & Layout
-...
+    For EACH visually distinct section:
 
-Final Summary
-`;
+    #### [Section Name or Description]
+    - Issues:
+      - Specific issue (e.g., "Heading misaligned by ~8px")
+      - Specific issue
+    - Details:
+      - Spacing: ...
+      - Alignment: ...
+      - Typography: ...
+      - Colors: ...
+    - Suggestions:
+      - Clear actionable fix
+      - Clear actionable fix
+
+    ---
+
+    ### Global Issues
+
+    - Typography:
+      - Font size mismatches
+      - Font weight inconsistencies
+    - Colors:
+      - Background / text color deviations
+    - Spacing:
+      - Inconsistent margins/padding
+    - Layout:
+      - Structural misalignment or width issues
+
+    ---
+
+    ### Priority Fixes (Top 5)
+
+    - Most impactful issue 1
+    - Most impactful issue 2
+    - Most impactful issue 3
+    - Most impactful issue 4
+    - Most impactful issue 5
+
+    ---
+
+    ### Final Verdict
+
+    - UI Match Quality: (Excellent / Good / Needs Improvement)
+    - Brief closing remark
+    `;
 
     const result = await model.generateContent([
       prompt,

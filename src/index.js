@@ -21,11 +21,23 @@ async function main() {
   if (mode === "ui") {
     const input = await getUserInput();
 
+    const VIEWPORTS = {
+      pc: 1920,
+      tab: 991,
+      mob: 375,
+    };
+
+    const viewport =
+      input.device === "custom"
+        ? { width: Number(input.customWidth) }
+        : { width: VIEWPORTS[input.device] };
+
     const result = await runValidation({
       pageUrl: input.url,
       figmaUrl: input.figmaUrl,
       figmaFilePath: input.filePath,
       device: input.device,
+      viewport,
       enableAI: input.enableAI,
       token: process.env.FIGMA_TOKEN, // Pass Figma token from env
     });

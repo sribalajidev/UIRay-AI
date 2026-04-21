@@ -7,22 +7,26 @@ const VIEWPORTS = {
   mob: 375,
 };
 
-async function takeScreenshot({ url, outputPath, device, }) {
+async function takeScreenshot({ url, outputPath, device, viewport }){
   if(!url) {
     throw new Error('Invalid URL');
   }
 
-  if (!device || !VIEWPORTS[device]) {
-    throw new Error("Invalid device type (pc | tab | mob)");
-  }
+  let width;
 
-  const width = VIEWPORTS[device];
+  if (viewport && viewport.width) {
+    width = viewport.width;
+  } else if (device && VIEWPORTS[device]) {
+    width = VIEWPORTS[device];
+  } else {
+    throw new Error("Invalid viewport or device");
+  }
   
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    console.log(`Device: ${device.toUpperCase()} (${width}px)`);
+    console.log(`Viewport width: ${width}px`);
     
     await page.setViewport({ 
       width,

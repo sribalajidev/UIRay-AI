@@ -7,7 +7,7 @@ import { generateUIAudit } from "../services/gemini.js";
 import fs from 'fs';
 import path from 'path';
 
-async function validateUI({ figmaUrl, figmaFilePath, pageUrl, token, device, enableAI }) {
+async function validateUI({ figmaUrl, figmaFilePath, pageUrl, token, device, viewport, enableAI }) {
   try {
     console.log('Starting validation process...');
 
@@ -71,7 +71,7 @@ async function validateUI({ figmaUrl, figmaFilePath, pageUrl, token, device, ena
     }
 
     // Take screenshot of page
-    const pagePath = await takeScreenshot({ url: pageUrl, outputPath: 'temp/page.png', device });
+    const pagePath = await takeScreenshot({ url: pageUrl, outputPath: 'temp/page.png', device, viewport });
     // console.log('Page screenshot saved to:', pagePath);
 
     // Compare images
